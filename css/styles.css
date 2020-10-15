@@ -1,0 +1,98 @@
+.row-header{
+    margin: 0px auto;
+    padding: 0px auto;
+
+}
+
+.row-content{
+    margin: 0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+
+.footer{
+    background-color: #D1C4E9;
+    margin: 0px auto;
+    padding: 20px 0px 20px 0px;
+}
+
+.jumbotron{
+    padding: 70px 30 px 70px 30 px;
+    min-height: 380px;
+    max-height: 400px;
+    margin: 0px auto;
+    /* background: #9575CD; */
+    /* background-image:url("img/alberto.png"); */
+    color:#1c1529;
+    
+}
+.h1name{
+    font-family: 'Dancing Script', cursive;
+}
+
+
+address{
+    font-size: 80%;
+    margin: 0px;
+    color:#0f0f0f;
+   
+}
+
+
+body{
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+}
+
+.navbar-dark{
+    /* background-color: #6438c8; */
+
+    background-color: #673acf;
+
+
+}
+
+/* i am going to change the font size of copyright part col-auto class to 80% because it is not fitting jio phone 2  */
+
+.col-auto{
+      font-size: 80%;
+}
+
+
+.tab-content{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+
+}
+
+.h1name{
+    font-size: 320%;
+}
+
+#card-heading{
+    text-align:center;
+}
+
+.card-header{
+    /* background-color: #673acf; */
+    background-color: #6438c8;
+}
+
+.idealink{
+  text-decoration:none;
+}
+
+
+/* to change the Button color using id="buttontop" inside HTML */
+ /* #buttontop{
+        background-color: #8064A2 !important;
+        color: white;
+        border-color: none;
+    }  */
+
+    #google{
+        color:#db4a39;
+    }
