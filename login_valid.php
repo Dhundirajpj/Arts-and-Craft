@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="submit" name="submit" value="Login">
 
     <div>
-      <label for="register" style="color:white;">Don't have an Account? </label><button id="register">Register</button>
+      <label for="register" style="color:white;">Don't have an Account? </label><button name='register' id="register">Register</button>
       <!-- <input type="submit" name="register" value="Register">  -->
     </div>
 
@@ -68,6 +68,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </form>
 
   <?php
+      if(isset($_POST['register'])) {
+        header('Location: ./signup_valid.php');
+  
+      }
+  
   
     if(isset($_POST['submit']) && $uidErr == "" && $passErr == "") {
 
