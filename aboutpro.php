@@ -1,3 +1,9 @@
+<?php
+session_start();
+$user=$_SESSION['userid'];
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,9 +25,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark navbar-expand-sm  fixed-top">
+<nav class="navbar navbar-dark navbar-expand-sm  fixed-top">
         <div class="container">
-            <a href="ideas.html" class="idealink">
+            <a href="ideas.php" class="idealink">
                 <button class="navbar-toggler" type="button" data-toggle="collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,21 +37,39 @@
                 <ul class="navbar-nav mr-auto">
                     
                         <div class="col-12 col-sm-3 align-self-center">
-                            <li class="nav-item"><a class="nav-link" href="./index.html"> <span class="fa fa-home fa-lg"></span> Home</a></li>
-                        </div>
-                        <div class="col-12 col-sm-3  align-self-center">
-                            <li class="nav-item"><a class="nav-link" href="./index.html"> <span class="fa fa-sign-in fa-lg"></span> Sign Up</a></li>
-                        </div>
-                        <div class="col-12 col-sm-12">
+                            <li class="nav-item active"><a class="nav-link" href="./index.php"> <span class="fa fa-home fa-lg"></span> Home</a></li>
                         </div>
                         <div class="col-12 col-sm-3 align-self-center">
-                            <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                        </div>
+
+                        <div class="col-12 col-sm-3  align-self-center">
+                        <li class="nav-item"><a class="nav-link" href="index_rate.php"><span class="fa fa-list fa-lg"></span> Rate</a></li>
+                    </div> 
+ 
+                        <div class="col-12 col-sm-3 align-self-center">
+                            <li class="nav-item"><a class="nav-link" href="./aboutus.php"><span class="fa fa-info fa-lg"></span> About</a></li>
                         </div>    
                         <div class="col-12 col-sm-3 align-self-center">
-                            <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="./logout.php"> <span class="fa fa-sign-in fa-lg"></span> LogOut</a></li>
+
+                            <!-- <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li> -->
                         </div> 
                         <div class="col-12 col-sm-3 align-self-center">
-                            <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-user fa-lg"></span> User</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./profile.php"><span class="fa fa-user fa-lg"></span>  <?php echo $user; ?></a></li>
                         </div> 
    
                     </div>
@@ -105,6 +129,13 @@
                 <h1>
                      Science Projects
                 </h1>
+
+                <div class="d-flex align-self-center" id="filter">
+                    &nbsp;&nbsp; <a href="filter.php">
+                    <button class='btn' id="buttontop"
+                    > Filter </button></a>
+                </div>
+
             </div>
             <div id="accordion">
                 <div class="card">
@@ -118,7 +149,7 @@
                     <div role="tabpanel" class="collapse show" id="peter" data-parent="#accordion">
                         <div class="card-body">
                             <p class="d-none d-lg-block">Photosynthesis is the process in which light energy is converted to chemical energy in the form of sugars. In a process driven by light energy, glucose molecules (or other sugars) are constructed from water and carbon dioxide, and oxygen is released as a byproduct. The glucose molecules provide organisms with two crucial resources: energy and fixed—organic—carbon.<br>
-                                <a href="ideas.html" class="idealink">
+                                <a href="ideas.php" class="idealink">
                                 <br>
                                     <button class="btn" id="buttontop">
                                         Open Project
@@ -140,7 +171,7 @@
                     <div role="tabpanel" class="collapse" id="danny" data-parent="#accordion">
                         <div class="card-body">
                             <p class="d-none d-lg-block">Chemistry is the process in which light energy is converted to chemical energy in the form of sugars. In a process driven by light energy, glucose molecules (or other sugars) are constructed from water and carbon dioxide, and oxygen is released as a byproduct. The glucose molecules provide organisms with two crucial resources: energy and fixed—organic—carbon.</em></p>
-                            <a href="ideas.html" class="idealink">
+                            <a href="ideas1.php" class="idealink">
                                 <br>
                                     <button class="btn" id="buttontop">
                                         Open Project
@@ -160,7 +191,7 @@
                     <div role="tabpanel" class="collapse" id="agumbe" data-parent="#accordion">
                         <div class="card-body">
                             <p class="d-none d-lg-block">Blessed with the most discerning gustatory sense, Agumbe, our CTO, personally ensures that every dish that we serve meets his exacting tastes. Our chefs dread the tongue lashing that ensues if their dish does not meet his exacting standards. He lives by his motto, <em>You click only if you survive my lick.</em></p>
-                            <a href="ideas.html" class="idealink">
+                            <a href="ideas.php" class="idealink">
                                 <br>
                                     <button class="btn" id="buttontop">
                                         Open Project
@@ -181,7 +212,7 @@
                     <div role="tabpanel" class="collapse" id="alberto" data-parent="#accordion">
                         <div class="card-body">
                             <p class="d-none d-lg-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, <em>Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!</em></p>
-                            <a href="ideas.html" class="idealink">
+                            <a href="ideas.php" class="idealink">
                                 <br>
                                     <button class="btn" id="buttontop">
                                         Open Project
@@ -201,9 +232,9 @@
                     <h5>Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
-                        <li><a href="./profile.html">Profile</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="./signup_valid.php">Sign Up</a></li>
+                        <li><a href="./profile.php">Profile</a></li>
+                        <li><a href="./index_rate.php">Rate Projects</a></li>
+                        <li><a href="./logout.php">Logout</a></li>
                     </ul>
                 </div>
                 <div class="col-7 col-sm-5">

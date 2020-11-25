@@ -12,14 +12,71 @@
     <link rel='stylesheet' href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="css/styles.css">
+<style>
 
+    .popup {
+  /* position: relative;
+  display: inline-block; */
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color:#673acf;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
     <title>Arts & Craft</title>
 </head>
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm  fixed-top">
         <div class="container">
-            <a href="ideas.html" class="idealink">
+            <a href="ideas.php" class="idealink">
                 <button class="navbar-toggler" type="button" data-toggle="collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -36,16 +93,26 @@
                         </div>
                         <div class="col-12 col-sm-12">
                         </div>
+  
                         <div class="col-12 col-sm-3 align-self-center">
-                            <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
-                        </div>    
-                        <div class="col-12 col-sm-3 align-self-center">
-                            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                     
+                            <!-- <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li> -->
                         </div> 
                         <div class="col-12 col-sm-3 align-self-center">
-                            <li class="nav-item"><a class="nav-link" href="./profile.html"><span class="fa fa-user fa-lg"></span> User</a></li>
-                        </div> 
-   
+                            <div class="popup" onclick="aboutUsPopup()">
+                                <a href="#">
+                                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-info fa-lg"></span> About</a></li>
+                                </a>
+                            </div>   
+                        </div>  
+                        <div class="col-12 col-sm-3 align-self-center">
+                            <div class="popup" onclick="userPopup()">
+                                <a href="#">
+                                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-user fa-lg"></span>User</a></li>
+                                </a>
+                            </div>                           
+                        </div>
+                      
                     </div>
                     
                     </div>
@@ -53,6 +120,7 @@
             </div>
         </div>
     </nav>  
+    
 
     
     <header class="jumbotron" style="background-image: url(img/color6.PNG); background-size: 100%;">
@@ -81,15 +149,20 @@
                         <div class="row-jumbo">
                             <div class="col-12 col-sm-5"></div>
                             <div class="col-12 col-sm-8">
-                                <a role="button" class="btn btn- nav-link btn-warning btn-sm" data-toggle="tooltip" data-html="true"  title="Or Write Us at:<br><strong>crafts@gmail.com</strong>"  data-placement="bottom" href="contributeForm1.php">
-                                    &nbsp; &nbsp;&nbsp;Share Your Ideas
-                                </a> 
+                                <div class="popup" onclick="shareIdeasPopup()">
+                                    <a role="button" class="btn btn- nav-link btn-warning btn-sm"  data-placement="bottom" href="#">
+                                        &nbsp; &nbsp;&nbsp;Share Your Ideas
+                                    </a> 
+                                    <span class="popuptext" id="myPopup"><p>To Visit this page, Please Login!<br></p><a href="login_valid.php"> <button class='btn block' id="buttontop">Login</button></a></span>
+                                    <span class="popuptext" id="userPage"><p>To Visit this page, Please Login!<br></p><a href="login_valid.php"> <button class='btn block' id="buttontop">Login</button></a></span>
+                                    <span class="popuptext" id="sciModel"><p>To Visit this page, Please Login!<br></p><a href="login_valid.php"> <button class='btn block' id="buttontop">Login</button></a></span>
+                                    <span class="popuptext" id="BofW"><p>To Visit this page, Please Login!<br></p><a href="login_valid.php"> <button class='btn block' id="buttontop">Login</button></a></span>
+                                    <span class="popuptext" id="origami"><p>To Visit this page, Please Login!<br></p><a href="login_valid.php"> <button class='btn block' id="buttontop">Login</button></a></span>                                  
+                                    <span class="popuptext" id="aboutusPage"><p>To Visit this page, Please Login!<br></p><a href="login_valid.php"> <button class='btn block' id="buttontop">Login</button></a></span>                                  
+                                    <span class="popuptext" id="userprofilePage"><p>To Visit this page, Please Login!<br></p><a href="login_valid.php"> <button class='btn block' id="buttontop">Login</button></a></span>                                  
+                                </div>
                             </div>  
-                        </div>
-
-
-                       
-                            
+                        </div>  
                     </div>
 
                     
@@ -107,40 +180,43 @@
 
     <div class="container">
         <div class="row row-content">
-
             <div class="col-sm-4">
-                <a href="aboutpro.html" class="badge badge-light">
-                    <div class="card">
-                        <h3 class="card-header text-white" id="card-heading">
-                        Science Model
-                        </h3>
-                        <img src="./img/tech2.PNG" class="img-fluid" >
-                        
-                    </div>
-                </a>
+                <div class="popup" onclick="scienceModelPopup()">
+                    <a href=# class="badge badge-light">
+                        <div class="card">
+                            <h3 class="card-header text-white" id="card-heading">
+                            Science Model
+                            </h3>
+                            <img src="./img/tech2.PNG" class="img-fluid" >
+                        </div>
+                    </a>
+                </div>
             </div>
 
             <div class="col-sm-4">
-                <a href="aboutpro.html" class="badge badge-light">
-                    <div class="card">
-                        <h3 class="card-header  text-white" id="card-heading">
-                        Best Out Of Waste
-                        </h3>
-                        <img src="img/waste.jpg" class="img-fluid"> 
-                    
-                    </div>
-                </a>
+                <div class="popup" onclick="BofWPopup()">
+                    <a href="#" class="badge badge-light">
+                        <div class="card">
+                            <h3 class="card-header  text-white" id="card-heading">
+                            Best Out Of Waste
+                            </h3>
+                            <img src="img/waste.jpg" class="img-fluid">                     
+                        </div>
+                    </a>
+                </div>
             </div>
 
             <div class="col-sm-4">
-                <a href="aboutpro.html" class="badge badge-light">
-                    <div class="card">
-                        <h3 class="card-header  text-white" id="card-heading">
-                        Origami
-                        </h3>
-                        <img src="img/or.jpg" class="img-fluid">
-                    </div>
-                </a>
+                <div class="popup" onclick="origamiPopup()">
+                    <a href="#" class="badge badge-light">
+                        <div class="card">
+                            <h3 class="card-header  text-white" id="card-heading">
+                            Origami
+                            </h3>
+                            <img src="img/or.jpg" class="img-fluid">
+                        </div>
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -155,10 +231,10 @@
                 <div class="col-4 offset-1 col-sm-2 ">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="./profile.html">Profile</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="./signup_valid.php">Sign Up</a></li>
+                        <!-- <li><a href="#">Home</a></li> -->
+                        <div class="popup" onclick="userProfilePopup()"><li><a href="#">User Profile</a></li></div>
+                        <!-- <li><a href="#">Menu</a></li> -->
+                        <li><a href="./signup11.php">Sign Up</a></li>
                     </ul>
                 </div>
                 <div class="col-7 col-sm-5">
@@ -192,7 +268,46 @@
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script>
-
+        function shareIdeasPopup() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+        }
+    </script>
+    <script>
+        function scienceModelPopup() {
+        var popup = document.getElementById("sciModel");
+        popup.classList.toggle("show");
+        }
+    </script>
+    <script>
+        function BofWPopup() {
+        var popup = document.getElementById("BofW");
+        popup.classList.toggle("show");
+        }
+    </script>
+    <script>
+        function origamiPopup() {
+        var popup = document.getElementById("origami");
+        popup.classList.toggle("show");
+        }
+    </script>
+    <script>
+        function userPopup() {
+        var popup = document.getElementById("userPage");
+        popup.classList.toggle("show");
+        }
+    </script>
+    <script>
+        function aboutUsPopup() {
+        var popup = document.getElementById("aboutusPage");
+        popup.classList.toggle("show");
+        }
+    </script>
+    <script>
+        function userProfilePopup() {
+        var popup = document.getElementById("userprofilePage");
+        popup.classList.toggle("show");
+        }
     </script>
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>

@@ -9,6 +9,7 @@
 <?php
 $uidErr = $passErr = "";
 $userid = $password = "";
+$var=1;
 
 function test_input($data) {
     $data = trim($data);
@@ -53,9 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <span class="error">* <?php echo $passErr;?></span>
         </div>
         <br>
-		<label><a href="#" style="text-decoration:none; color: #e2e743;">Forgot Password?</a></label><br><br>
+		<label><a href="login_valid_email.php" style="text-decoration:none; color: #e2e743;">Login With Email</a></label><br><br>
 
-		<input type="checkbox" name="remember"><font color=white>Remember Me</font><br><br>
+		<input type="checkbox" name="rememberme"><font color=white>Remember Me</font><br><br>
 
     <input type="submit" name="submit" value="Login">
 
@@ -68,40 +69,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </form>
 
   <?php
-      if(isset($_POST['register'])) {
-        header('Location: ./signup_valid.php');
   
-      }
-  
-  
-    if(isset($_POST['submit']) && $uidErr == "" && $passErr == "") {
-
-        session_start();
-
-        $cookie_name = $userid;
-        $cookie_value = $password;
-        setcookie("user", $cookie_name, time() + (86400 * 30), "/"); // 86400 = 1 day
-        setcookie("password", $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-
-        $_SESSION['user'] = $userid;
+    if(isset($_POST['register'])) {
+      header('Location: ./signup11.php');
 
     }
+
+
+    if(isset($_POST['submit']) && $uidErr == "" && $passErr == "") {
+
+      session_start();
+
+
+
+$_SESSION['userid'] = $userid;
+
+$_SESSION['password'] = $password;
+$_SESSION['var']=$var;
+
+  }
+
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && $uidErr == "" && $passErr == "") {  
     
       $name=$_POST["userid"];
       $pass=$_POST["pass"];
       
-      $db = mysqli_connect('localhost','root','','users') or 
-      die('Error connecting to MySQL server.');
-      
-      $query = "SELECT * FROM login WHERE Name='$name' AND Password='$pass' LIMIT 1";
-      $results = mysqli_query($db, $query);
+      $con = mysqli_connect('localhost','root');
+      mysqli_select_db($con,'user_info');
+      $query = "SELECT * FROM signin WHERE username='$name' AND password='$pass'";
+      $results = mysqli_query($con, $query);
       
           if (mysqli_num_rows($results) == 1){
-                  echo("<div style='color: green; margin-top: 620px; margin-left: 735px;'><b>Login Successful</b></div>");
+            if (!empty($_POST["rememberme"])) 
+            { 
+              $cookie_name = $userid;
+              $cookie_value = $password;
+              setcookie("userid", $cookie_name, time() + (86400 * 365*20), "/"); // 86400 = 1 day
+              setcookie("password", $cookie_value, time() + (86400 * 365*20), "/"); //20 years
+              $name=$_POST["userid"];
+              $pass=$_POST["pass"];// 86400 = 1 day
+            } 
+
+
+
+
+
+
+
+                  // echo("<div style='color: green; margin-top: 620px; margin-left: 735px;'><b>Login Successful</b></div>");
+                  header('Location:./index.php');
               }else{
-                  echo("<div style='color: #ff4444; margin-top: 620px; margin-left: 680px;'><b>Invalid Username or Password</b></div>");  
+                  echo("<div style='color: #ff4444; margin-top: 120px; margin-left: 660px;'><b>Invalid Username or Password</b></div>");  
               }
       }
 

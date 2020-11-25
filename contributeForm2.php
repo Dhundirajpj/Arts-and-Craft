@@ -7,6 +7,11 @@
 <style>.error{color:red;}</style>
 <body class="formBody">
 <?php
+
+session_start();
+$email=$_SESSION['email'];
+
+
 $matErr = $stepsErr = "";
 $materials = $steps = "";
 
@@ -67,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if(isset($_POST['submit']) && $stepErr == "" && $matErr == "") {
 
-    header('Location: ./index.html');
+    header('Location: ./contributeForm3.php');
 
 }
 

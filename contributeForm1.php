@@ -6,7 +6,14 @@
 </head>
 <style>.error{color:red;}</style>
 <body class="formBody">
+
+
 <?php
+session_start();
+// $email=$_SESSION['email'];
+// echo $email;
+
+
 $catErr = $projErr = "";
 $category = $projectName = "";
 
@@ -71,20 +78,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="time">
             <select id="time" name="time">
                 <option hidden value="">Time</option>
-                <option value="less than 1 hour">less than 1 hour</option>
-                <option value="1-2 hours">1-2 hours</option>
-                <option value="2-3 hours">2-3 hours</option>
-                <option value="greater than 3 hours">greater than 3 hours</option>
+                <option value="1">less than 1 hour</option>
+                <option value="2">1-2 hours</option>
+                <option value="4">2-4 hours</option>
+                <option value="5">greater than 5 hours</option>
             </select>
         </div>
 
         <div class="cost">
             <select id="cost" name="cost">
                 <option hidden value="">Cost</option>
-                <option value="less than 200 rupees">less than 200 rupees</option>
-                <option value="200-400 rupees">200-400 rupees</option>
-                <option value="400-600 rupees">400-600 rupees</option>
-                <option value="more than 600 rupees">more than 600 rupees</option>
+                <option value="200">Less than 200 rupees</option>
+                <option value="400">200-400 rupees</option>
+                <option value="600">400-600 rupees</option>
+                <option value="1000">More than 600 rupees</option>
             </select>
         </div>
         

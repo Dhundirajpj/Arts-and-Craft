@@ -247,3 +247,31 @@ body{
         background: #f6ff00;
         color: black;
     }
+
+    #apply:hover{
+        background-color: rgb(255, 187, 0);
+    }
+
+    table{
+        /* border-collapse: collapse; */
+        width: 60%;
+        color: black;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    th{
+        padding: 7px;
+        background-color: #673acf;
+        color: white;
+    }
+
+    td{
+        padding: 7px;
+        color: black;
+        background-color: whitesmoke;
+        
+    }
+
+    
+
